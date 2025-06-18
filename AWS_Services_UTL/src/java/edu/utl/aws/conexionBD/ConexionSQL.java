@@ -1,4 +1,4 @@
-package ConexionBD;
+package edu.utl.aws.conexionBD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
