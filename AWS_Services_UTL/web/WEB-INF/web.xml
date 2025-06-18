@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	 version="6.0">
+    <servlet>
+        <!-- Ponemos el nombre del Servlet -->
+        <servlet-name>RESTLibrosAWS</servlet-name>
+        <!-- Esto nunca se cambia: -->
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>        
+        
+        <init-param>
+            <!-- Esto nunca se cambia: -->
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <!-- Aqui ponemos el nombre del paquete 
+                 donde se encuentran las clases Java 
+                 que despliegan servicios REST:
+            -->
+            <param-value>edu.utl.aws.rest</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <!-- Aqui ponemos el nombre del servlet que declaramos antes: -->
+        <servlet-name>RESTLibrosAWS</servlet-name>
+        
+        <!-- Aqui declaramos la ruta para llegar a las clases
+             que despliegan servicios: 
+        -->
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+</web-app>
