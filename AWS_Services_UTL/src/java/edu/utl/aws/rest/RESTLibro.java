@@ -13,26 +13,29 @@ import jakarta.ws.rs.core.Response;
 
 @Path("libros")
 public class RESTLibro {
+
     @Path("insert")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Response insertar(@FormParam("libro") @DefaultValue("") String datos){
         Gson objGS = new Gson();
         Libro l = objGS.fromJson(datos, Libro.class);
+
+        if (l == null || l.getTitulo() == null || l.getEditorial() == null) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                           .entity("{\"error\": \"Datos incompletos o inválidos\"}")
+                           .build();
+        }
+
         String out = "";
         ControladorLibro cl = new ControladorLibro();
         try {
             cl.insertarLibro(l);
-            out = """
-                  {"ok": "Registro exitoso :D"}
-                  """;
-        }catch (Exception e){
+            out = "{\"ok\": \"Registro exitoso :D\"}";
+        } catch (Exception e) {
             e.printStackTrace();
-            out = """
-                  {"error": "Error interno de la BD, comunicate con el administrador"}
-                  """;
+            out = String.format("{\"error\": \"Error interno: %s\"}", e.getMessage());
         }
         return Response.status(Response.Status.OK).entity(out).build();
     }
-    
 }
