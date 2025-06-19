@@ -1,59 +1,84 @@
-
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
+      background-color: #f0f4f8;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 20px;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 400px;
     }
 
     h2 {
+      text-align: center;
       color: #333;
-    }
-
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 300px;
+      margin-bottom: 20px;
     }
 
     label {
       display: block;
-      margin-top: 10px;
+      margin-top: 15px;
+      font-weight: 600;
     }
 
-    input, select {
+    input {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       margin-top: 5px;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
 
     button {
-      margin-top: 15px;
-      padding: 10px;
-      width: 100%;
-      background-color: #4CAF50;
-      color: white;
+      margin-top: 25px;
+      padding: 12px;
+      background-color: #007bff;
       border: none;
-      border-radius: 5px;
+      color: white;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: 600;
       cursor: pointer;
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #0056b3;
     }
 
-    .output {
+    .message {
       margin-top: 20px;
-      background: #fff;
       padding: 15px;
-      border-radius: 10px;
-      width: 300px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      display: none;
+      text-align: center;
     }
-  
+
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
