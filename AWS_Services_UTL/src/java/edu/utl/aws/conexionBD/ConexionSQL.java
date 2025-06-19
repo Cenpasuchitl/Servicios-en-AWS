@@ -8,7 +8,7 @@ public class ConexionSQL implements AutoCloseable{
     public Connection open(){ 
         String user = "admin";
         String password = "Lirzk834dM2qegZ";
-        String url = "jdbc:mysql:biblioteca-utl.cji824u8mpow.us-east-2.rds.amazonaws.com:3306/AWS_BD";
+        String url = "jdbc:mysql://biblioteca-utl.cji824u8mpow.us-east-2.rds.amazonaws.com:3306/bibliotecaAWS";
         String parametros = "?useSSL=false&useUnicode=true&characterEncoding=utf-8"; 
         try { 
             Class.forName("com.mysql.cj.jdbc.Driver"); 
@@ -19,6 +19,7 @@ public class ConexionSQL implements AutoCloseable{
             throw new RuntimeException(e); 
         } 
     } 
+    
     public void close(){ 
         if (conn != null) { 
             try { 
