@@ -19,7 +19,7 @@
       const datos = new URLSearchParams();
       datos.append("libro", JSON.stringify(libro));
 
-      fetch("http://localhost:8080/AWS_Services_UTL/api/libros/insert", {
+      fetch("http://3.139.67.72:8080/AWS_Services_UTL/api/libros/insert", {
         method: "POST",
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
